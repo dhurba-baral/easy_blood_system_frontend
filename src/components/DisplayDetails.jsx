@@ -13,11 +13,11 @@ const DisplayDetails = (props) => {
 
         const config = {
             params: {
-                id: localStorage.getItem('id')
+                _id: localStorage.getItem('_id')
             }
         }
-        console.log(config.params.id)
-        setUser(config.params.id);
+        console.log(config.params._id)
+        setUser(config.params._id);
 
         axios.get(`http://localhost:4000/request/${id}`)
         .then(response => {
@@ -49,17 +49,17 @@ const DisplayDetails = (props) => {
         <>
             <Navbar/>
             <div className="container my-5">
-                <p>Note: You can donate/help by contacting on the contact details from below or you can post on our post details page to reach more people.</p>
+                <p>Note: You can help the patient if you can by contacting on their contact details from below or you can post on our offer help page to reach more peoplr.</p>
 
-                <h2>Name: {alldetails.name}</h2>
+                <h2>Blood Group: {alldetails.bloodGroup}</h2>
+                <p>Name: {alldetails.name}</p>
                 <h4 className="strong">Contact Details</h4 >
+                <p>Email: {alldetails.email}</p>
                 <p>Address: {alldetails.address}</p>
                 <p>Phone Number: {alldetails.contact}</p>
-                <p>Email: {alldetails.email}</p>
-                <p>Blood Group: {alldetails.bloodGroup}</p>
                 <h4>Details:</h4>
                 <p>{alldetails.description}</p>
-                <button className="btn btn-primary"><Link to="/offer-help" className="text-light">Donate Blood</Link></button>
+                <button className="btn btn-primary"><Link to="/offer-help" className="text-light">Offer Help</Link></button>
                 {
                     (user) && (
                         <div className='my-3'>

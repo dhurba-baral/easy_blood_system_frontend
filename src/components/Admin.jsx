@@ -13,11 +13,11 @@ const Admin = (props) => {
     useEffect(() => {
         const config = {
             params: {
-                id: localStorage.getItem('id')
+                _id: localStorage.getItem('_id')
             }
         }
-        console.log(config.params.id)
-        setUser(config.params.id);
+        console.log(config.params._id)
+        setUser(config.params._id);
     }, [])
 
     const handleSubmit = e => {
@@ -30,10 +30,10 @@ const Admin = (props) => {
             }
             setSuccess("Login Successful");
             // props.history.push('/');
-            console.log(res.data.result, "LOGIN SUCESSFULL")
+            console.log(res.data.result[0], "LOGIN SUCESSFULL")
             // setUserSession(res.data.token, res.data.publicProfile);
             localStorage.setItem('token', res.data.token)
-            localStorage.setItem('id', res.data.result.id)
+            localStorage.setItem('_id', res.data.result[0].id)
             window.location.reload();
         })
             .catch((error) => {

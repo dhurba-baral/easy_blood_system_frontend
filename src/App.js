@@ -19,11 +19,11 @@ function App() {
    useEffect(() => {
         const config = {
             params: {
-                id: localStorage.getItem('id')
+                _id: localStorage.getItem('_id')
             }
         }
-        console.log(config.params.id)
-        setUser(config.params.id);
+        console.log(config.params._id)
+        setUser(config.params._id);
     }, [])
   return (
     <>

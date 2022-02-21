@@ -14,11 +14,11 @@ const OfferDetails = (props) => {
 
         const config = {
             params: {
-                id: localStorage.getItem('id')
+                _id: localStorage.getItem('_id')
             }
         }
         // console.log(config.params._id)
-        setUser(config.params.id);
+        setUser(config.params._id);
 
     axios.get(`http://localhost:4000/donor/${id}`)
         .then(response => {

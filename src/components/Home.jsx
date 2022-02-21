@@ -7,17 +7,17 @@ import Footer from './Footer';
 // import People from './people';
 
 const Home = () => {
-const [request, setRequest] = useState([]);  
-const [donors, setDonor] = useState([]);
+const [people, setPeople] = useState([]);  
+const [offers, setOffer] = useState([]);
   useEffect(() => {
     axios.get('http://localhost:4000/request')
-    .then(response => setRequest(response.data))
+    .then(response => setPeople(response.data))
     .catch(err => console.log(err)) 
   }, [])
 
   useEffect(() => {
     axios.get('http://localhost:4000/donor')
-    .then(response => setDonor(response.data))
+    .then(response => setOffer(response.data))
     .catch(err => console.log(err)) 
   }, [])
 
@@ -43,17 +43,17 @@ const [donors, setDonor] = useState([]);
           </thead>
           <tbody>
             {
-              request.map((req, index) => {
+              people.map((person, index) => {
                 return (
                   <tr key={index}>
                   <th scope="row">{index+1}</th>
-                  <td>{req.name}</td>
-                  <td>{req.bloodGroup}</td>
-                  <td>{req.address}</td>
-                  <td>{req.contact}</td>
-                  <td>{req.email}</td>
-                  <td>{req.description}</td>
-                  <td><button className="btn btn-primary"><Link className="text-light offerBtn" to={{pathname: `/req-details/${req.id}`}}>View Request</Link></button></td>
+                  <td>{person.name}</td>
+                  <td>{person.bloodGroup}</td>
+                  <td>{person.address}</td>
+                  <td>{person.contact}</td>
+                  <td>{person.email}</td>
+                  <td>{person.description}</td>
+                  <td><button className="btn btn-primary"><Link className="text-light offerBtn" to={{pathname: `/req-details/${person.id}`}}>View Request</Link></button></td>
                   {/* <a href="/offer-help" className="text-light offerBtn"></a> */}
                 </tr>
                 )
@@ -81,17 +81,17 @@ const [donors, setDonor] = useState([]);
           </thead>
           <tbody>
             {
-              donors.map((donor, index) => {
+              offers.map((offer, index) => {
                 return (
                   <tr key={index}>
                   <th scope="row">{index+1}</th>
-                  <td>{donor.name}</td>
-                  <td>{donor.bloodGroup}</td>
-                  <td>{donor.address}</td>
-                  <td>{donor.contact}</td>
-                  <td>{donor.email}</td>
-                  <td>{donor.description}</td>
-                  <td><button className="btn btn-primary"><Link to={{pathname: `/offer-details/${donor.id}`}} className="text-light offerBtn">View Donor</Link></button></td>
+                  <td>{offer.name}</td>
+                  <td>{offer.bloodGroup}</td>
+                  <td>{offer.address}</td>
+                  <td>{offer.contact}</td>
+                  <td>{offer.email}</td>
+                  <td>{offer.description}</td>
+                  <td><button className="btn btn-primary"><Link to={{pathname: `/offer-details/${offer.id}`}} className="text-light offerBtn">View Donor</Link></button></td>
                 </tr>
                 )
               })
