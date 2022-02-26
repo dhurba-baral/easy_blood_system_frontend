@@ -89,14 +89,14 @@ const UpdateDetails = props => {
                     <select className="form-select" value={value}
       onChange={e => setValue(e.currentTarget.value)}>
                         <option defaultValue>Choose your blood group</option>
-                        <option value="oxygen">A+</option>
-                        <option value="bed">A-</option>
-                        <option value="ambulance">B+</option>
-                        <option value="medicine">B-</option>
-                        <option value="plasma">AB+</option>
-                        <option value="plasma">AB-</option>
-                        <option value="plasma">O+</option>
-                        <option value="plasma">O-</option>
+                        <option value="A positive">A positive</option>
+                        <option value="A negative">A negative</option>
+                        <option value="B positive">B positive</option>
+                        <option value="B negative">B negative</option>
+                        <option value="AB positive">AB positive</option>
+                        <option value="AB negative">AB negative</option>
+                        <option value="O positive">O positive</option>
+                        <option value="O negative">O negative</option>
                     </select>
                 </div>
                 <div className="form-group my-3">

@@ -12,6 +12,7 @@ import OfferDetails from './components/OfferDetails';
 import UpdateDetails from './components/UpdateForm';
 import UpdateOffer from './components/UpdateOffer';
 import About from './components/About';
+import Search from './components/Search';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/" component={Home} exact />
                 <Route path="/offer-help" component={OfferHelp} />
                 <Route path="/get-help" component={GetHelp} />
+                <Route path="/search" component={Search} />
                 <Route path="/admin" component={Admin} />
                 <Route path="/req-details/:id" component={DisplayDetails} />
                 <Route path="/offer-details/:id" component={OfferDetails} />

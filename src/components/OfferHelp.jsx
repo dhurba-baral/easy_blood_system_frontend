@@ -60,14 +60,14 @@ const OfferHelp = (props) => {
                     <select className="form-select" value={value}
       onChange={e => setValue(e.currentTarget.value)}>
                         <option defaultValue>Choose your blood group</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
+                        <option value="A positive">A positive</option>
+                        <option value="A negative">A negative</option>
+                        <option value="B positive">B positive</option>
+                        <option value="B negative">B negative</option>
+                        <option value="AB positive">AB positive</option>
+                        <option value="AB negative">AB negative</option>
+                        <option value="O positive">O positive</option>
+                        <option value="O negative">O negative</option>
                     </select>
                 </div>
                 <div className="form-group my-3">

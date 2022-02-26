@@ -49,7 +49,7 @@ const DisplayDetails = (props) => {
         <>
             <Navbar/>
             <div className="container my-5">
-                <p>Note: You can help the patient if you can by contacting on their contact details from below or you can post on our offer help page to reach more peoplr.</p>
+                <p>Note: You can help the patient by contacting on their contact details from below or you can post on our offer help page to reach more people.</p>
 
                 <h2>Blood Group: {alldetails.bloodGroup}</h2>
                 <p>Name: {alldetails.name}</p>
